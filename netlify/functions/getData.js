@@ -1,9 +1,10 @@
 // netlify/functions/getData.js
 
 const fetch = require('node-fetch');
+
 const apiKey = process.env.ANTHROPIC_API_KEY;
 
-exports.handler = async function (event, context) {
+export const handler = async (prompt) => {
   try {
     const response = await fetch('https://api.anthropic.com/v1/complete', {
       method: 'POST',
@@ -11,12 +12,12 @@ exports.handler = async function (event, context) {
         Accept: 'application/json',
         'anthropic-version': '2023-06-01',
         'Content-Type': 'application/json',
-        'x-api-key':
-          apiKey,
+        'x-api-key': apiKey,
       },
       body: JSON.stringify({
         max_tokens_to_sample: 3000,
         model: 'claude-2',
+        prompt,
       }),
     });
 

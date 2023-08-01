@@ -20,11 +20,12 @@ import { getResponse, promptWrapper } from './api';
 
 // console.log(response)
 
-console.log('logging response')
-fetch('/.netlify/functions/getResponse.js')
-  .then(response => response.json())
-  .then(data => console.log(data));
-console.log('still logging...')
+// console.log('logging response');
+// console.log()
+// fetch('/.netlify/functions/getResponse.js')
+//   .then(response => response.json())
+//   .then(data => console.log(data));
+// console.log('still logging...')
 
 const globalAIObject = {
   name: 'AI',
@@ -52,7 +53,11 @@ if (window.location.pathname === '/dist/') {
 
   document.querySelectorAll('.lets-go-btn').forEach((element) => {
     console.log(element);
-    element.addEventListener('click', (event) => {
+    element.addEventListener('click', async() => {
+      const response = await fetch('/.netlify/functions/getResponse.js');
+        .then(response => response.json())
+      console.log({response})
+  
       document.location.href = '/dist/itinerary.html';
       console.log(classes);
       document.body.classList.add(...classes);
