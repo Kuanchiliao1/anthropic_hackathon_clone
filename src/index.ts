@@ -44,9 +44,9 @@ if (localMessageHistory === 'localMessageHistory') {
 }
 console.log({ localErrorLog, localMessageHistory });
 
-if (window.location.pathname === '/dist/') {
+if (window.location.pathname === '/dist/' || window.location.pathname === '/') {
   console.log('main page');
-} else if (window.location.pathname === '/dist/mainquests.html') {
+} else if (window.location.pathname === '/dist/mainquests.html' || window.location.pathname === '/mainquests.html') {
   console.log('only log on quests page');
   const classes: [string[]] =
     'transition-opacity ease-in duration-700 opacity-0'.split(' ');
