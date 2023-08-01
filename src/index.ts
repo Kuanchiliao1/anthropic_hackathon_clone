@@ -6,19 +6,25 @@ import { ChatAnthropic } from 'langchain/chat_models/anthropic';
 import { HumanMessage } from 'langchain/schema';
 import { getResponse, promptWrapper } from './api';
 
-const chat = new ChatAnthropic({
-  temperature: 0.9,
-  anthropicApiKey:
-    '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', // In Node.js defaults to process.env.ANTHROPIC_API_KEY
-});
+// const chat = new ChatAnthropic({
+//   temperature: 0.9,
+//   anthropicApiKey:
+//     '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', // In Node.js defaults to process.env.ANTHROPIC_API_KEY
+// });
 
-const response = await chat.call([
-  new HumanMessage({
-    text: 'Hello, how',
-  }),
-]);
+// const response = await chat.call([
+//   new HumanMessage({
+//     text: 'Hello, how',
+//   }),
+// ]);
 
-console.log(response)
+// console.log(response)
+
+console.log('logging response')
+fetch('/.netlify/functions/getResponse.js')
+  .then(response => response.json())
+  .then(data => console.log(data));
+console.log('still logging...')
 
 const globalAIObject = {
   name: 'AI',
