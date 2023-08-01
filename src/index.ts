@@ -67,6 +67,7 @@ if (window.location.pathname === '/dist/') {
 
   const btn = document.querySelector('.test-retrieval-btn');
   btn.addEventListener('click', async () => {
+    console.log('btn clicked');
     const response = await fetch('/.netlify/functions/testFunction').then(
       (res) => res.json
     );
