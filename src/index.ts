@@ -63,21 +63,19 @@ if (window.location.pathname === '/dist/') {
       console.log(classes);
       document.body.classList.add(...classes);
     });
-
   });
 
   const btn = document.querySelector('.test-retrieval-btn');
   btn.addEventListener('click', async () => {
-    const response = await fetch('/.netlify/functions/testFunction')
-      .then(res => res.json)
-    
-    document.title = response
-    console.log(response)
-    
-  }
+    const response = await fetch('/.netlify/functions/testFunction').then(
+      (res) => res.json
+    );
+
+    document.title = response;
+    console.log(response);
+  });
   // Fade out animation!
   // document.body.classList.add(...classes);
-} else {
 }
 
 // const prompt = 'Why is the sky blue?';
