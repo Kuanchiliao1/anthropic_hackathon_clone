@@ -3,12 +3,24 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.ts',
+  entry: {
+    main: './src/index.ts',
+  },
   devtool: 'inline-source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Title attribute for ouput file',
+      title: 'Here',
       template: './src/index.html',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Title attribute for output file',
+      filename: 'mainQuests.html',
+      template: './src/mainQuests.html',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Title attribute for output file',
+      filename: 'itinerary.html',
+      template: './src/itinerary.html',
     }),
   ],
   output: {
