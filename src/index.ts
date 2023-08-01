@@ -54,7 +54,7 @@ if (window.location.pathname === '/dist/') {
   document.querySelectorAll('.lets-go-btn').forEach((element) => {
     console.log(element);
     element.addEventListener('click', async() => {
-      const response = await fetch('/.netlify/functions/getData.js');
+      const response = await fetch('/.netlify/functions/getData');
         .then(response => response.json())
       console.log({response})
   
