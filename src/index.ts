@@ -57,9 +57,9 @@ if (window.location.pathname === '/dist/' || window.location.pathname === '/') {
       const response = await fetch('/.netlify/functions/getData').then(
         (response) => response.json()
       );
-      console.log({ response });
+      console.log('response', response);
 
-      document.location.href = '/dist/itinerary.html';
+      // document.location.href = '/dist/itinerary.html';
       console.log(classes);
       document.body.classList.add(...classes);
     });
