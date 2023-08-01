@@ -14,8 +14,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Title attribute for output file',
-      filename: 'mainQuests.html',
-      template: './src/mainQuests.html',
+      filename: 'mainquests.html',
+      template: './src/mainquests.html',
     }),
     new HtmlWebpackPlugin({
       title: 'Title attribute for output file',
