@@ -46,7 +46,7 @@ console.log({ localErrorLog, localMessageHistory });
 
 if (window.location.pathname === '/dist/') {
   console.log('main page');
-} else if (window.location.pathname === '/dist/mainQuests.html') {
+} else if (window.location.pathname === '/dist/mainquests.html') {
   console.log('only log on quests page');
   const classes: [string[]] =
     'transition-opacity ease-in duration-700 opacity-0'.split(' ');
