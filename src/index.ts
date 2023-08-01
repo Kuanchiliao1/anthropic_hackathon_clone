@@ -53,11 +53,12 @@ if (window.location.pathname === '/dist/') {
 
   document.querySelectorAll('.lets-go-btn').forEach((element) => {
     console.log(element);
-    element.addEventListener('click', async() => {
-      const response = await fetch('/.netlify/functions/getData');
-        .then(response => response.json())
-      console.log({response})
-  
+    element.addEventListener('click', async () => {
+      const response = await fetch('/.netlify/functions/getData').then(
+        (response) => response.json()
+      );
+      console.log({ response });
+
       document.location.href = '/dist/itinerary.html';
       console.log(classes);
       document.body.classList.add(...classes);
