@@ -1,7 +1,6 @@
 // netlify/functions/getData.js
 
-const fetch = require('node-fetch');
-
+import fetch from 'node-fetch'
 const apiKey = process.env.ANTHROPIC_API_KEY;
 
 export const handler = async (prompt) => {
