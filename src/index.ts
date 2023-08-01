@@ -46,7 +46,10 @@ console.log({ localErrorLog, localMessageHistory });
 
 if (window.location.pathname === '/dist/' || window.location.pathname === '/') {
   console.log('main page');
-} else if (window.location.pathname === '/dist/mainquests.html' || window.location.pathname === '/mainquests.html') {
+} else if (
+  window.location.pathname === '/dist/mainquests.html' ||
+  window.location.pathname === '/mainquests.html'
+) {
   console.log('only log on quests page');
   const classes: [string[]] =
     'transition-opacity ease-in duration-700 opacity-0'.split(' ');
@@ -54,9 +57,14 @@ if (window.location.pathname === '/dist/' || window.location.pathname === '/') {
   document.querySelectorAll('.lets-go-btn').forEach((element) => {
     console.log(element);
     element.addEventListener('click', async () => {
-      const response = await fetch('/.netlify/functions/getData').then(
-        (response) => response.json()
-      );
+      const prompt = 'tell me a one sentence story...';
+      const response = await fetch('/.netlify/functions/getData', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(prompt),
+      }).then((response) => response.json());
       console.log('response', response);
 
       // document.location.href = '/dist/itinerary.html';
